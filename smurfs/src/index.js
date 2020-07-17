@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import { formReducer } from './reducers/formReducer';
 import thunk from 'redux-thunk';
 
-import "./index.css";
 import App from "./components/App";
+
+import "./styles/index.scss";
 
 const store = createStore(formReducer, applyMiddleware(thunk));
 

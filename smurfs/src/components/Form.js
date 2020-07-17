@@ -34,38 +34,42 @@ const Form = props => {
 
     return (
         <form className='Form' onSubmit={handleSubmit}>
-            <label htmlFor='formName'>Name</label>
-            <input
-                name='name'
-                id='formName'
-                type='text'
-                value={formValues.name}
-                onChange={handleChanges}
-                required
-            />
-            <br />
-            <label htmlFor='formAge'>Age</label>
-            <input
-                name='age'
-                id='formAge'
-                type='number'
-                min='0'
-                value={formValues.age}
-                onChange={handleChanges}
-                required
-            />
-            <br />
-            <label htmlFor='formHeight'>Height</label>
-            <input
-                name='height'
-                id='formHeight'
-                type='number'
-                min='1'
-                value={formValues.height}
-                onChange={handleChanges}
-                required
-            />
-            <span>cm</span>
+            <div className='inputs'>
+                <label htmlFor='formName'>Name
+                    <input
+                        name='name'
+                        id='formName'
+                        type='text'
+                        value={formValues.name}
+                        onChange={handleChanges}
+                        required
+                    />
+                </label>
+                <br />
+                <label htmlFor='formAge'>Age
+                    <input
+                        name='age'
+                        id='formAge'
+                        type='number'
+                        min='0'
+                        value={formValues.age}
+                        onChange={handleChanges}
+                        required
+                    />
+                </label>
+                <br />
+                <label htmlFor='formHeight'>Height (cm)
+                    <input
+                        name='height'
+                        id='formHeight'
+                        type='number'
+                        min='1'
+                        value={formValues.height}
+                        onChange={handleChanges}
+                        required
+                    />
+                </label>
+            </div>
             <br />
             <button type='submit'>Register</button>
 

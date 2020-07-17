@@ -1,0 +1,20 @@
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.6rem;
+}
+
+h1, h2, h3 {
+    font-family: $header-font;
+}
+
+p, button, input, label {
+    font-size: 2rem;
+    font-family: $content-font;
+}
