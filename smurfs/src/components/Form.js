@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { postSmurf } from '../actions/formActions';
 
 const initialFormValues = {
     name: '',
@@ -18,19 +20,20 @@ const Form = props => {
     };
 
     const handleSubmit = e => {
-        
-    }
+        e.preventDefault();
+        props.postSmurf(formatFormValues(formValues));
+    };
 
-    const formatFormValues = formValues => {
+    const formatFormValues = values => {
         return {
-            ...formValues,
-            name: formValues.name.trim(),
-            height: `${formValues.height}cm`
+            ...values,
+            name: values.name.trim(),
+            height: `${values.height}cm`
         };
-    }
+    };
 
     return (
-        <form className='Form'>
+        <form className='Form' onSubmit={handleSubmit}>
             <label htmlFor='formName'>Name</label>
             <input
                 name='name'
@@ -64,10 +67,10 @@ const Form = props => {
             />
             <span>cm</span>
             <br />
-            <button>Register</button>
+            <button type='submit'>Register</button>
 
         </form>
     );
 };
 
-export default Form;
+export default connect(null, { postSmurf })(Form);

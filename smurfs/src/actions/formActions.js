@@ -1,11 +1,16 @@
 import axios from 'axios';
 
-export const SUBMIT_SMURF = 'SUBMIT_SMURF';
 export const GET_SMURFS = 'GET_SMURFS';
-// export const submitSmurf = () => dispatch => {
-//     axios
-//     .post()
-// }
+
+export const postSmurf = newSmurf => dispatch => {
+    axios
+    .post('http://localhost:3333/smurfs', newSmurf)
+    .then(res => {
+        console.log(res);
+        dispatch({ type: GET_SMURFS, payload: res.data })
+    })
+    .catch(err => console.log(err));
+}
 
 export const getSmurfs = () => dispatch => {
     axios
