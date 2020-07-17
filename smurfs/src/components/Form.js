@@ -17,6 +17,18 @@ const Form = props => {
         });
     };
 
+    const handleSubmit = e => {
+        
+    }
+
+    const formatFormValues = formValues => {
+        return {
+            ...formValues,
+            name: formValues.name.trim(),
+            height: `${formValues.height}cm`
+        };
+    }
+
     return (
         <form className='Form'>
             <label htmlFor='formName'>Name</label>
