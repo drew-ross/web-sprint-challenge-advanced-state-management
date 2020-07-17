@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
+import Form from './Form';
+import SmurfList from './SmurfList';
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        <header>
+          <h1>Donate a Smurf Foundation</h1>
+          <h2>Our village needs unwanted smurfs! In order to submit a smurf, please fill out our form below:</h2>
+        </header>
+        <Form />
+        <SmurfList />
       </div>
     );
   }
