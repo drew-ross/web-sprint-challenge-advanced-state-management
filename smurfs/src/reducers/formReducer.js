@@ -1,10 +1,11 @@
 import {
     GET_SMURFS,
-    POST_SMURF
+    HANDLE_ERROR
 } from '../actions/formActions';
 
 const initialState = {
-    smurfs: []
+    smurfs: [],
+    error: ''
 };
 
 export const formReducer = (state = initialState, action) => {
@@ -12,8 +13,14 @@ export const formReducer = (state = initialState, action) => {
         case GET_SMURFS:
             return {
                 ...state,
-                smurfs: action.payload
+                smurfs: action.payload,
+                error: ''
             };
+        case HANDLE_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
     }
