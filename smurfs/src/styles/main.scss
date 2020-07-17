@@ -1,0 +1,73 @@
+.App {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 4rem;
+}
+
+h2 {
+    margin: 4rem;
+}
+
+h3 {
+    margin: 2rem;
+}
+
+header {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.Form {
+    width: 40rem;
+    margin: 0 auto;
+
+    .inputs {
+        @include flex(column, space-between, flex-end);
+        transform: translateX(-5rem);
+    }
+
+    input {
+        margin-left: 3rem;
+        flex-grow: 3;
+    }
+
+    button {
+        margin: 0 auto;
+        background: $smurf-color;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 1rem;
+
+        &:hover {
+            filter: brightness(1.2);
+            cursor: pointer;
+        }
+
+        &:active {
+            filter: brightness(.8);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.SmurfList .smurfs {
+    @include flex(column, space-evenly, center);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Smurf {
+    height: 12rem;
+    width: 40rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: $smurf-color;
+    text-align: left;
+    margin: 1rem;
+}
