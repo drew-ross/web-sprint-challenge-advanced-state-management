@@ -1,10 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Smurf from './Smurf';
 
 const SmurfList = props => {
 
     return (
-        <p>Yes</p>
+        <div className='SmurfList'>
+            {props.smurfs.map(smurf => <Smurf smurf={smurf} />)}
+        </div>
     )
 };
 
-export default SmurfList;
+const mapStateToProps = state => {
+    return {
+        smurfs: state.smurfs
+    }
+}
+
+export default connect(mapStateToProps, {})(SmurfList);
