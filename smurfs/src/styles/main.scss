@@ -57,15 +57,17 @@ header {
 }
 
 .SmurfList .smurfs {
-    @include flex(row, space-evenly, center);
+    @include flex(column, space-evenly, center);
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .Smurf {
-    width: 20rem;
-    height: 15rem;
+    height: 12rem;
+    width: 40rem;
     padding: 2rem;
     border-radius: 1rem;
     background: $smurf-color;
     text-align: left;
+    margin: 1rem;
 }
